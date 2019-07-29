@@ -7,7 +7,7 @@
     </div>
     <!-- End of Header Area -->
 
-    <hr>
+    <v-divider/>
 
     <!-- Start of content area -->
     <div class='about_content_area'>
@@ -55,7 +55,7 @@
     </div>
     <!-- End of content area -->
 
-    <hr>
+    <v-divider/>
 
   </div>
 </template>
