@@ -3,7 +3,7 @@
 
     <!-- Header area -->
     <div class='about_header'>
-      <h1 class='center'>About Me</h1>
+      <h1 class='center title'>About Me</h1>
     </div>
     <!-- End of Header Area -->
 
@@ -88,6 +88,11 @@
     margin-right: 5%;
   }
 
+  .title {
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+  }
+
   @media only all and (max-width: 768px) {
 
     .pic_div {
@@ -99,8 +104,8 @@
 
     .about_content_area {
       grid-template-columns: 1fr;
-      margin-left: 2%;
-      margin-right: 2%;
+      margin-left: 8%;
+      margin-right: 8%;
     }
 
   }
