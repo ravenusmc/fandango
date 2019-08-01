@@ -30,7 +30,7 @@
           is simple. It's this page - I'll have some areas with data talk about it
           and then move on. The second page is my simple About page which is in all
           of these projects. Hey, I want to spend time working on the data analysis
-          part then making an About page. That may change but for now I
+          part then making an About page. That may change but for now I'mm
         </p>
       </div>
 
