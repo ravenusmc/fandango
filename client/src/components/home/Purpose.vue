@@ -72,4 +72,12 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+@media only all and (max-width: 900px){
+
+  section {
+    grid-template-columns: 1fr;
+  }
+
+}
 </style>
