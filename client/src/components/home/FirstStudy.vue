@@ -20,8 +20,18 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: "FirstStudy",
+  methods: {
+  ...mapActions([
+      'fireActions',
+    ]),
+  },
+  created() {
+      this.fireActions()
+  },
 }
 </script>
 
