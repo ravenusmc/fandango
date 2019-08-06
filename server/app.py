@@ -14,8 +14,8 @@ app.config.from_object(__name__)
 # enable CORS
 CORS(app)
 
-# sanity check route
-@app.route('/ping', methods=['GET'])
+#Getting the average scores for rotten tomatoes
+@app.route('/getRottenTomatoeAverages', methods=['GET'])
 def ping_pong():
     return jsonify('pong!')
 

@@ -10,6 +10,8 @@
         <div>
           <h3 class='center'>Basic review of the Data</h3>
           <div>
+            <p>Rotten Tomatoes Average Rating (Professional): </p>
+            <p>Rotten Tomatoes Average Rating (User):</p>
           </div>
         </div>
       </div>

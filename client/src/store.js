@@ -21,7 +21,11 @@ export default new Vuex.Store({
 
     //Get Rotten Tomatoe ratings
     fetchRottenTomatoeRatings: ({ commit }) => {
-      console.log('FIRED!!')
+      const path = 'http://localhost:5000/getRottenTomatoeAverages';
+      axios.get(path)
+      .then((res) => {
+        //commit('setGraphOneData', res.data)
+      })
     },
 
   },
