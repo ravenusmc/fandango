@@ -10,8 +10,8 @@
         <div>
           <h3 class='center'>Basic review of the Data</h3>
           <div>
-            <p>Rotten Tomatoes Average Rating (Professional): </p>
-            <p>Rotten Tomatoes Average Rating (User):</p>
+            <p>Rotten Tomatoes Average Rating (Professional): {{ RottenTomatoesProfessional }} </p>
+            <p>Rotten Tomatoes Average Rating (User): {{ RottenTomatoesUser}}</p>
           </div>
         </div>
       </div>
@@ -22,10 +22,17 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import { mapActions } from 'vuex';
 
 export default {
   name: "FirstStudy",
+  computed: {
+    ...mapGetters([
+    'RottenTomatoesProfessional',
+    'RottenTomatoesUser'
+    ]),
+  },
   methods: {
   ...mapActions([
       'fireActions',

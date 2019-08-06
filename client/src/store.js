@@ -10,7 +10,8 @@ export default new Vuex.Store({
     RottenTomatoesUser: 0,
   },
   getters: {
-
+    RottenTomatoesProfessional: state => state.RottenTomatoesProfessional,
+    RottenTomatoesUser: state => state.RottenTomatoesUser,
   },
   actions: {
 
@@ -24,13 +25,21 @@ export default new Vuex.Store({
       const path = 'http://localhost:5000/getRottenTomatoeAverages';
       axios.get(path)
       .then((res) => {
-        //commit('setGraphOneData', res.data)
+        const professional_mean = res.data[0]
+        const user_mean = res.data[1]
+        commit('setRottenTomatoeProfessional' ,professional_mean)
+        commit('setRottenTomatoeUser', user_mean)
       })
     },
 
   },
 
   mutations: {
-
+    setRottenTomatoeProfessional(state, data) {
+      state.RottenTomatoesProfessional = data;
+    },
+    setRottenTomatoeUser(state, data) {
+      state.RottenTomatoesUser = data;
+    },
   },
 });

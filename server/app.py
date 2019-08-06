@@ -16,8 +16,10 @@ CORS(app)
 
 #Getting the average scores for rotten tomatoes
 @app.route('/getRottenTomatoeAverages', methods=['GET'])
-def ping_pong():
-    return jsonify('pong!')
+def getRottenTomatoeAverages():
+    data = Data()
+    mean_list = data.get_rotten_tomatoe_data()
+    return jsonify(mean_list)
 
 if __name__ == '__main__':
     app.run()
