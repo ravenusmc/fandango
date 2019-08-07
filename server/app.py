@@ -21,5 +21,12 @@ def getRottenTomatoeAverages():
     mean_list = data.get_rotten_tomatoe_data()
     return jsonify(mean_list)
 
+#Getting the mean scores for metacritic reviews
+@app.route('/getMetaCriticScores', methods=['GET'])
+def getMetaCriticScores():
+    data = Data()
+    mean_list = data.get_meta_critic_data()
+    return jsonify(mean_list)
+
 if __name__ == '__main__':
     app.run()

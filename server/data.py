@@ -29,6 +29,19 @@ class Data():
         mean_list.append(user_score_mean)
         return mean_list
 
+    #This method will get the mean for the metacritic ratings
+    def get_meta_critic_data(self):
+        meta_critic = self.data['Metacritic']
+        meta_critic_user = self.data['Metacritic_User']
+        #This list will hold the means
+        mean_list = []
+        #Getting the means and then formating them.
+        professional_score_mean = format(meta_critic.mean(), '.2f')
+        mean_list.append(professional_score_mean)
+        user_score_mean = format(meta_critic_user.mean(), '.2f')
+        mean_list.append(user_score_mean)
+        return mean_list
+
 
 data = Data()
 data.get_rotten_tomatoe_data()

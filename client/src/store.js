@@ -8,16 +8,21 @@ export default new Vuex.Store({
   state: {
     RottenTomatoesProfessional: 0,
     RottenTomatoesUser: 0,
+    metaCriticProfessional: 0,
+    metaCriticUser: 0,
   },
   getters: {
     RottenTomatoesProfessional: state => state.RottenTomatoesProfessional,
     RottenTomatoesUser: state => state.RottenTomatoesUser,
+    metaCriticProfessional: state => state.metaCriticProfessional,
+    metaCriticUser: state => state.metaCriticUser,
   },
   actions: {
 
     //This is the main action that will get the data for the firstStudy section.
     fireActions: ({ dispatch }) => {
       dispatch('fetchRottenTomatoeRatings')
+      dispatch('fetchMetaCriticRatings')
     },
 
     //Get Rotten Tomatoe ratings
@@ -32,6 +37,17 @@ export default new Vuex.Store({
       })
     },
 
+    fetchMetaCriticRatings: ({ commit }) => {
+      const path = 'http://localhost:5000/getMetaCriticScores';
+      axios.get(path)
+      .then((res) => {
+        const professional_mean = res.data[0]
+        const user_mean = res.data[1]
+        commit('setMetaCriticProfessional' ,professional_mean)
+        commit('setMetaCriticUser', user_mean)
+      })
+    },
+
   },
 
   mutations: {
@@ -40,6 +56,12 @@ export default new Vuex.Store({
     },
     setRottenTomatoeUser(state, data) {
       state.RottenTomatoesUser = data;
+    },
+    setMetaCriticProfessional(state, data) {
+      state.metaCriticProfessional = data;
+    },
+    setMetaCriticUser(state, data) {
+      state.metaCriticUser = data;
     },
   },
 });

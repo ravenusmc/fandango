@@ -12,6 +12,8 @@
           <div>
             <p>Rotten Tomatoes Average Rating (Professional): {{ RottenTomatoesProfessional }} </p>
             <p>Rotten Tomatoes Average Rating (User): {{ RottenTomatoesUser}}</p>
+            <p>Metacritic Average Rating (Professional): {{ metaCriticProfessional }} </p>
+            <p>Metacritic Average Rating (User): {{ metaCriticUser }}</p>
           </div>
         </div>
       </div>
@@ -30,7 +32,9 @@ export default {
   computed: {
     ...mapGetters([
     'RottenTomatoesProfessional',
-    'RottenTomatoesUser'
+    'RottenTomatoesUser',
+    'metaCriticProfessional',
+    'metaCriticUser',
     ]),
   },
   methods: {
