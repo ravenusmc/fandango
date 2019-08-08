@@ -17,6 +17,7 @@
             <p>Fandango Stars Average: {{ fandangoStarsAverage }} out of 5.</p>
           </div>
         </div>
+        <MovieSelect/>
       </div>
 
     </section>
@@ -25,11 +26,15 @@
 </template>
 
 <script>
+import MovieSelect from '@/components/home/MovieSelect.vue';
 import { mapGetters } from 'vuex';
 import { mapActions } from 'vuex';
 
 export default {
   name: "FirstStudy",
+  components: {
+    MovieSelect,
+  },
   computed: {
     ...mapGetters([
     'RottenTomatoesProfessional',
