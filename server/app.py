@@ -28,5 +28,12 @@ def getMetaCriticScores():
     mean_list = data.get_meta_critic_data()
     return jsonify(mean_list)
 
+#Getting the mean scores for metacritic reviews
+@app.route('/getFandangoScores', methods=['GET'])
+def getFandangoScores():
+    data = Data()
+    mean = data.get_fandango_mean()
+    return jsonify(mean)
+
 if __name__ == '__main__':
     app.run()

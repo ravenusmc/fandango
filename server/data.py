@@ -42,6 +42,12 @@ class Data():
         mean_list.append(user_score_mean)
         return mean_list
 
+    #This method will get the mean for the fandango ratings
+    def get_fandango_mean(self):
+        fandango_mean = self.data['Fandango_Stars']
+        mean = format(fandango_mean.mean(), '.2f')
+        return mean
+
 
 data = Data()
 data.get_rotten_tomatoe_data()

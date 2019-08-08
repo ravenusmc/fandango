@@ -10,12 +10,14 @@ export default new Vuex.Store({
     RottenTomatoesUser: 0,
     metaCriticProfessional: 0,
     metaCriticUser: 0,
+    fandangoStarsAverage: 0,
   },
   getters: {
     RottenTomatoesProfessional: state => state.RottenTomatoesProfessional,
     RottenTomatoesUser: state => state.RottenTomatoesUser,
     metaCriticProfessional: state => state.metaCriticProfessional,
     metaCriticUser: state => state.metaCriticUser,
+    fandangoStarsAverage: state => state.fandangoStarsAverage,
   },
   actions: {
 
@@ -23,6 +25,7 @@ export default new Vuex.Store({
     fireActions: ({ dispatch }) => {
       dispatch('fetchRottenTomatoeRatings')
       dispatch('fetchMetaCriticRatings')
+      dispatch('fetchFandangoRatings')
     },
 
     //Get Rotten Tomatoe ratings
@@ -37,6 +40,7 @@ export default new Vuex.Store({
       })
     },
 
+    //This action will fetch the metacritic average ratings
     fetchMetaCriticRatings: ({ commit }) => {
       const path = 'http://localhost:5000/getMetaCriticScores';
       axios.get(path)
@@ -45,6 +49,16 @@ export default new Vuex.Store({
         const user_mean = res.data[1]
         commit('setMetaCriticProfessional' ,professional_mean)
         commit('setMetaCriticUser', user_mean)
+      })
+    },
+
+    //This action will fetch the fandango average star rating
+    fetchFandangoRatings: ({ commit }) => {
+      const path = 'http://localhost:5000/getFandangoScores';
+      axios.get(path)
+      .then((res) => {
+        console.log(res.data)
+        commit('setFandangoAverage', res.data)
       })
     },
 
@@ -63,5 +77,8 @@ export default new Vuex.Store({
     setMetaCriticUser(state, data) {
       state.metaCriticUser = data;
     },
+    setFandangoAverage(state, data) {
+      state.fandangoStarsAverage = data;
+    }
   },
 });

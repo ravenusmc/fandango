@@ -10,10 +10,11 @@
         <div>
           <h3 class='center'>Basic review of the Data</h3>
           <div>
-            <p>Rotten Tomatoes Average Rating (Professional): {{ RottenTomatoesProfessional }} </p>
-            <p>Rotten Tomatoes Average Rating (User): {{ RottenTomatoesUser}}</p>
-            <p>Metacritic Average Rating (Professional): {{ metaCriticProfessional }} </p>
-            <p>Metacritic Average Rating (User): {{ metaCriticUser }}</p>
+            <p>Rotten Tomatoes Average Rating (Professional): {{ RottenTomatoesProfessional }} out of 100.</p>
+            <p>Rotten Tomatoes Average Rating (User): {{ RottenTomatoesUser}} out of 100.</p>
+            <p>Metacritic Average Rating (Professional): {{ metaCriticProfessional }} out of 100.</p>
+            <p>Metacritic Average Rating (User): {{ metaCriticUser }} out of 10.</p>
+            <p>Fandango Stars Average: {{ fandangoStarsAverage }} out of 5.</p>
           </div>
         </div>
       </div>
@@ -35,6 +36,7 @@ export default {
     'RottenTomatoesUser',
     'metaCriticProfessional',
     'metaCriticUser',
+    'fandangoStarsAverage',
     ]),
   },
   methods: {
