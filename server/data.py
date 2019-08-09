@@ -12,7 +12,8 @@ class Data():
     #This is just a test method that's used for for testing ideas out. This method
     #is only meant to help me test out ideas and not to 'test' the application
     def basic_info(self):
-        print(self.data.head())
+        #print(self.data.head())
+        print(self.data['FILM'].unique())
         #This will get me all unique values in a column
         #print(self.data.MARITAL_STATUS.unique())
 
@@ -50,4 +51,4 @@ class Data():
 
 
 data = Data()
-data.get_rotten_tomatoe_data()
+data.basic_info()
