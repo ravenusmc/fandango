@@ -2,9 +2,11 @@
   <div>
     <form @submit="submitSelection">
       <h5>Select a Movie:</h5>
+        <input type="text" v-model="search" placeholder="Movie Name">
         <select v-model="movies" name="movie">
-          <option v-for="movie in movies" :value="movie">{{ movie }}</option>
+          <option v-for="movie in filteredMovies" :value="movie">{{ movie }}</option>
         </select>
+
         <button type="submit">Submit</button>
     </form>
   </div>
@@ -15,6 +17,7 @@ export default {
   name: 'MovieSelect',
   data() {
     return {
+      search: "",
       movies: ['Avengers: Age of Ultron (2015)', 'Cinderella (2015)', 'Ant-Man (2015)',
             'Do You Believe? (2015)', 'Hot Tub Time Machine 2 (2015)',
             'The Water Diviner (2015)', 'Irrational Man (2015)', 'Top Five (2014)',
@@ -83,6 +86,13 @@ export default {
       evt.preventDefault();
       alert('Hi')
     },
+  },
+  computed: {
+    filteredMovies: function() {
+      return this.movies.filter((movie) => {
+        return movie.match(this.search);
+      })
+    }
   }
 }
 </script>

@@ -57,7 +57,6 @@ export default new Vuex.Store({
       const path = 'http://localhost:5000/getFandangoScores';
       axios.get(path)
       .then((res) => {
-        console.log(res.data)
         commit('setFandangoAverage', res.data)
       })
     },
