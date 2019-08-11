@@ -2,9 +2,13 @@
   <div>
       <Header/>
 
-    <main>
+    <!-- Main section -->
+    <main role="main">
+      <!-- Explains the purpose of the project -->
       <Purpose/>
+      <!-- Basic data information -->
       <FirstStudy/>
+
     </main>
 
   </div>

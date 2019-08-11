@@ -88,10 +88,10 @@ export default {
     },
   },
   computed: {
-    filteredMovies: function() {
+    filteredMovies() {
       return this.movies.filter((movie) => {
-        return movie.match(this.search);
-      })
+        return movie.toLowerCase().match(this.search);
+      });
     }
   }
 }
