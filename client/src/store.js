@@ -61,6 +61,16 @@ export default new Vuex.Store({
       })
     },
 
+    //This action gets information off of one movie
+    fetchSingleMovieRatings: ({ commit }, {payload}) => {
+      console.log(payload)
+      const path = 'http://localhost:5000/singleMovieRating';
+      axios.post(path, payload)
+      .then((res) => {
+        //console.log(res.data)
+      })
+    }
+
   },
 
   mutations: {

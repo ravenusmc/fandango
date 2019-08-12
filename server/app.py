@@ -35,5 +35,14 @@ def getFandangoScores():
     mean = data.get_fandango_mean()
     return jsonify(mean)
 
+#Getting the score for a single movie
+@app.route('/singleMovieRating', methods=['GET', 'POST'])
+def getSingleMovieRating():
+    if request.method == 'POST':
+        data = Data()
+        post_data = request.get_json()
+        movie = post_data['movie']
+        return jsonify('Mike')
+
 if __name__ == '__main__':
     app.run()

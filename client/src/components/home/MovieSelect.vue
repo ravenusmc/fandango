@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'MovieSelect',
   data() {
@@ -84,14 +86,19 @@ export default {
     }
   },
   methods: {
+    ...mapActions([
+      'fetchSingleMovieRatings',
+    ]),
     submitSelection(evt) {
       evt.preventDefault();
-      alert(this.movie)
+      const payload = {
+        'movie': this.movie,
+      }
+      this.fetchSingleMovieRatings({ payload })
     },
   },
   computed: {
     filteredMovies() {
-      //const movies = Array.from(this.movies);
       return this.movies.filter(movie => {
         return movie.toLowerCase().match(this.search);
       });
