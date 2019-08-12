@@ -50,5 +50,5 @@ class Data():
         return mean
 
 
-data = Data()
-data.basic_info()
+# data = Data()
+# data.basic_info()
