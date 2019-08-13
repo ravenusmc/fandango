@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <form @submit="submitSelection">
       <h5>Select a Movie:</h5>
         <input type="text" v-model="search" placeholder="Movie Name">
@@ -7,9 +8,9 @@
         <select v-model="movie" name="movie">
           <option v-for="movie in filteredMovies" :value="movie">{{ movie }}</option>
         </select>
-
         <button type="submit">Submit</button>
     </form>
+
   </div>
 </template>
 
@@ -93,6 +94,7 @@ export default {
       evt.preventDefault();
       const payload = {
         'movie': this.movie,
+        'show': true,
       }
       this.fetchSingleMovieRatings({ payload })
     },

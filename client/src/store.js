@@ -11,6 +11,8 @@ export default new Vuex.Store({
     metaCriticProfessional: 0,
     metaCriticUser: 0,
     fandangoStarsAverage: 0,
+    singleMovie: [],
+    showSingleMovieSection: false,
   },
   getters: {
     RottenTomatoesProfessional: state => state.RottenTomatoesProfessional,
@@ -18,6 +20,8 @@ export default new Vuex.Store({
     metaCriticProfessional: state => state.metaCriticProfessional,
     metaCriticUser: state => state.metaCriticUser,
     fandangoStarsAverage: state => state.fandangoStarsAverage,
+    singleMovie: state => state.singleMovie,
+    showSingleMovieSection: state => state.showSingleMovieSection,
   },
   actions: {
 
@@ -63,11 +67,13 @@ export default new Vuex.Store({
 
     //This action gets information off of one movie
     fetchSingleMovieRatings: ({ commit }, {payload}) => {
-      console.log(payload)
       const path = 'http://localhost:5000/singleMovieRating';
       axios.post(path, payload)
       .then((res) => {
-        console.log(res.data)
+        const show = payload.show
+        console.log(show)
+        commit('setSingleMovieRatings', res.data)
+        commit('setShowSingleMovieSection', show)
       })
     }
 
@@ -88,6 +94,12 @@ export default new Vuex.Store({
     },
     setFandangoAverage(state, data) {
       state.fandangoStarsAverage = data;
+    },
+    setSingleMovieRatings(state, data){
+      state.singleMovie = data;
+    },
+    setShowSingleMovieSection(state, data){
+      state.showSingleMovieSection = data;
     }
   },
 });

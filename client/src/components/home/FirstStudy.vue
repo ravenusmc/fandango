@@ -17,7 +17,15 @@
             <p>Fandango Stars Average: {{ fandangoStarsAverage }} out of 5.</p>
           </div>
         </div>
+
         <MovieSelect/>
+
+        <div v-if='showSingleMovieSection'>
+          <p>Rotten Tomatoes Rating: {{ singleMovie[0] }}</p>
+          <p>Metacritic Rating: {{ singleMovie[1] }}</p>
+          <p>Fandango_rating: {{ singleMovie[2] }}</p>
+        </div>
+
       </div>
 
     </section>
@@ -42,6 +50,8 @@ export default {
     'metaCriticProfessional',
     'metaCriticUser',
     'fandangoStarsAverage',
+    'singleMovie',
+    'showSingleMovieSection',
     ]),
   },
   methods: {
