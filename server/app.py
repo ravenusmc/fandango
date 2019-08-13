@@ -42,7 +42,8 @@ def getSingleMovieRating():
         data = Data()
         post_data = request.get_json()
         movie = post_data['movie']
-        return jsonify('Mike')
+        ratings = data.get_single_movie_ratings(movie)
+        return jsonify(ratings)
 
 if __name__ == '__main__':
     app.run()

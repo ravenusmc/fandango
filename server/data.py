@@ -49,6 +49,21 @@ class Data():
         mean = format(fandango_mean.mean(), '.2f')
         return mean
 
+    #This method will get movie ratings for a single movie
+    def get_single_movie_ratings(self, movie):
+        movie_data_set = self.data[(self.data.FILM == movie)]
+        #This list will hold all of the ratings
+        ratings = []
+        rotten_tomatoes_rating = int(movie_data_set.iloc[0,1])
+        ratings.append(rotten_tomatoes_rating)
+        metacritic_rating = int(movie_data_set.iloc[0,3])
+        ratings.append(metacritic_rating)
+        fandango_rating = int(movie_data_set.iloc[0,6])
+        ratings.append(fandango_rating)
+        return ratings
 
-# data = Data()
-# data.basic_info()
+
+
+#data = Data()
+#data.basic_info()
+#data.get_single_movie_ratings('Cinderella (2015)')

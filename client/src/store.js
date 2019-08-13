@@ -67,7 +67,7 @@ export default new Vuex.Store({
       const path = 'http://localhost:5000/singleMovieRating';
       axios.post(path, payload)
       .then((res) => {
-        //console.log(res.data)
+        console.log(res.data)
       })
     }
 
