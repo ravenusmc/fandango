@@ -8,7 +8,8 @@
         <select v-model="movie" name="movie">
           <option v-for="movie in filteredMovies" :value="movie">{{ movie }}</option>
         </select>
-        <button type="submit">Submit</button>
+        <br>
+        <v-btn type="submit">Submit</v-btn>
     </form>
 
   </div>
@@ -112,5 +113,11 @@ export default {
 <style scoped>
 select {
   border: 2px solid black;
+  margin-bottom: 10px;
+}
+
+input {
+  border: 2px solid black;
+  margin-bottom: 10px;
 }
 </style>

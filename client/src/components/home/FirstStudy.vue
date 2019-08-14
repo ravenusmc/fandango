@@ -20,10 +20,10 @@
 
         <MovieSelect/>
 
-        <div v-if='showSingleMovieSection'>
-          <p>Rotten Tomatoes Rating: {{ singleMovie[0] }}</p>
-          <p>Metacritic Rating: {{ singleMovie[1] }}</p>
-          <p>Fandango_rating: {{ singleMovie[2] }}</p>
+        <div class='singleMovieResultsArea' v-if='showSingleMovieSection'>
+          <p class='font_change'>Rotten Tomatoes Rating: {{ singleMovie[0] }}</p>
+          <p class='font_change'>Metacritic Rating: {{ singleMovie[1] }}</p>
+          <p class='font_change'>Fandango_rating: {{ singleMovie[2] }}</p>
         </div>
 
       </div>
@@ -86,6 +86,15 @@ section {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.font_change {
+  font-weight: bold;
+}
+
+.singleMovieResultsArea {
+  margin-top: 30px;
+  padding: 10px;
 }
 
 @media only all and (max-width: 900px){
