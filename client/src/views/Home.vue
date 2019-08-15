@@ -8,6 +8,8 @@
       <Purpose/>
       <!-- Basic data information -->
       <FirstStudy/>
+      <hr>
+      <!-- Start of Graph area -->
 
     </main>
 
