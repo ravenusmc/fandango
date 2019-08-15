@@ -95,6 +95,10 @@ section {
 .singleMovieResultsArea {
   margin-top: 30px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only all and (max-width: 900px){

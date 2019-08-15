@@ -9,7 +9,7 @@
           <option v-for="movie in filteredMovies" :value="movie">{{ movie }}</option>
         </select>
         <br>
-        <v-btn type="submit">Submit</v-btn>
+        <button type="submit">Submit</button>
     </form>
 
   </div>
@@ -111,6 +111,14 @@ export default {
 </script>
 
 <style scoped>
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 select {
   border: 2px solid black;
   margin-bottom: 10px;
@@ -120,4 +128,17 @@ input {
   border: 2px solid black;
   margin-bottom: 10px;
 }
+
+button {
+  border: 2px solid #4F87D5;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #4F87D5;
+}
+
+button:hover {
+  border: 2px solid #3FDF5A;
+  background-color: #3FDF5A;
+}
+
 </style>
