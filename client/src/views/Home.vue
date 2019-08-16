@@ -10,6 +10,7 @@
       <FirstStudy/>
       <hr>
       <!-- Start of Graph area -->
+      <GraphArea/>
 
     </main>
 
@@ -20,6 +21,7 @@
 import Header from '@/components/home/Header.vue';
 import Purpose from '@/components/home/Purpose.vue';
 import FirstStudy from '@/components/home/FirstStudy.vue';
+import GraphArea from '@/components/home/GraphArea.vue';
 
 export default {
   name: 'home',
@@ -27,6 +29,7 @@ export default {
     Header,
     Purpose,
     FirstStudy,
+    GraphArea,
   },
 };
 </script>
