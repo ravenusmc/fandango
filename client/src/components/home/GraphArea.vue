@@ -1,6 +1,8 @@
 <template>
   <div>
-    Graphs
+    <section>
+      Graphs
+    </section>
   </div>
 </template>
 
@@ -11,4 +13,11 @@ export default {
 </script>
 
 <style scoped>
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 2px solid black;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 </style>
