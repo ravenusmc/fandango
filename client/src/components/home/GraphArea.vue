@@ -1,14 +1,19 @@
 <template>
   <div>
     <section>
-      Graphs
+      <GraphCard/>
     </section>
   </div>
 </template>
 
 <script>
+import GraphCard from '@/components/home/GraphCard.vue';
+
 export default {
   name: "GraphArea",
+  components: {
+    GraphCard,
+  }
 }
 </script>
 
