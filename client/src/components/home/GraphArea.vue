@@ -8,6 +8,12 @@
         :options='chartOptionsOne'>
       </GraphCard>
 
+      <GraphCard
+        :typeOne='typeOne'
+        :data='averagesGraphUser'
+        :options='chartOptionsTwo'>
+      </GraphCard>
+
     </section>
   </div>
 </template>
@@ -30,6 +36,14 @@ export default {
           min: 0
         }}
       },
+      chartOptionsTwo: {
+      title: 'Average Movie Ratings (User)',
+      legend: { position: 'bottom' },
+      'height': 300,
+      vAxis: { viewWindow: {
+        min: 0
+      }}
+    },
     }
   },
   components: {
@@ -38,6 +52,7 @@ export default {
   computed: {
     ...mapGetters([
       'averagesGraph',
+      'averagesGraphUser',
     ]),
   },
   methods: {
@@ -52,11 +67,21 @@ export default {
 </script>
 
 <style scoped>
+
   section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 2px solid black;
+    grid-gap: 2em;
     margin-left: 10%;
     margin-right: 10%;
   }
+
+@media only all and (max-width: 800px) {
+
+  section {
+    grid-template-columns: 1fr;
+  }
+
+}
+
 </style>

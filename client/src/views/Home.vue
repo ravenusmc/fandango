@@ -11,6 +11,9 @@
       <hr>
       <!-- Start of Graph area -->
       <GraphArea/>
+      <hr>
+      <!-- Start of Summary Area -->
+
 
     </main>
 

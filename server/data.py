@@ -62,7 +62,7 @@ class Data():
         ratings.append(fandango_rating)
         return ratings
 
-    #This method will get the data for the first movie
+    #This method will get the data for the professional ratings
     def get_average_movie_ratings(self):
         movie_rating_data = []
         columns = ['Company', 'Rating']
@@ -79,7 +79,22 @@ class Data():
             count += 1
         return movie_rating_data
 
-
+    #This method will get the data for the user ratings
+    def get_average_movie_ratings_user(self):
+        movie_rating_data_user = []
+        columns = ['Company', 'Rating']
+        movie_rating_data_user.append(columns)
+        companies = ['Rotten Tomatoes', 'Metacritic', 'Fandango']
+        csv_file_names = ['RT_user_norm', 'Metacritic_user_nom', 'Fandango_Ratingvalue']
+        count = 0
+        while count < 3:
+            rows = []
+            ratings_average = format(self.data[csv_file_names[count]].mean(), '.2f')
+            rows.append(companies[count])
+            rows.append(float(ratings_average))
+            movie_rating_data_user.append(rows)
+            count += 1
+        return movie_rating_data_user
 
 
 # data = Data()

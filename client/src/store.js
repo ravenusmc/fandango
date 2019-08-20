@@ -14,6 +14,7 @@ export default new Vuex.Store({
     singleMovie: [],
     showSingleMovieSection: false,
     averagesGraph: {},
+    averagesGraphUser: {},
   },
   getters: {
     RottenTomatoesProfessional: state => state.RottenTomatoesProfessional,
@@ -24,6 +25,7 @@ export default new Vuex.Store({
     singleMovie: state => state.singleMovie,
     showSingleMovieSection: state => state.showSingleMovieSection,
     averagesGraph: state => state.averagesGraph,
+    averagesGraphUser: state => state.averagesGraphUser,
   },
   actions: {
 
@@ -37,6 +39,7 @@ export default new Vuex.Store({
     //This action will build the graphs.
     buildGraphs: ({ dispatch }) => {
       dispatch('buildFirstGraph')
+      dispatch('buildSecondGraph')
     },
 
     //Get Rotten Tomatoe ratings
@@ -89,8 +92,17 @@ export default new Vuex.Store({
       const path = 'http://localhost:5000/firstGraph';
       axios.get(path)
       .then((res) => {
-        console.log(res.data)
         commit('setFirstGraph', res.data)
+      })
+    },
+
+    //This action will build the second graph
+    buildSecondGraph: ({commit}) => {
+      const path = 'http://localhost:5000/secondGraph';
+      axios.get(path)
+      .then((res) => {
+        console.log(res.data)
+        commit('setSecondGraph', res.data)
       })
     },
 
@@ -121,5 +133,8 @@ export default new Vuex.Store({
     setFirstGraph(state, data){
       state.averagesGraph = data;
     },
+    setSecondGraph(state, data){
+      state.averagesGraphUser = data;
+    }
   },
 });
