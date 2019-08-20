@@ -8,12 +8,32 @@
 
 <script>
 import GraphCard from '@/components/home/GraphCard.vue';
+import { mapActions } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
   name: "GraphArea",
+  data(){
+    return {
+      typeOne: "BarChart",
+    }
+  },
   components: {
     GraphCard,
-  }
+  },
+  computed: {
+    ...mapGetters([
+      'averagesGraph',
+    ]),
+  },
+  methods: {
+  ...mapActions([
+      'buildGraphs',
+    ]),
+  },
+  mounted() {
+    this.buildGraphs()
+  },
 }
 </script>
 

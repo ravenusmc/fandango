@@ -49,7 +49,8 @@ def getSingleMovieRating():
 @app.route('/firstGraph', methods=['GET'])
 def firstGraph():
     data = Data()
-    return jsonify('Mike')
+    movie_rating_data = data.get_average_movie_ratings()
+    return jsonify(movie_rating_data)
 
 if __name__ == '__main__':
     app.run()

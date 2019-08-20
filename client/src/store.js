@@ -13,6 +13,7 @@ export default new Vuex.Store({
     fandangoStarsAverage: 0,
     singleMovie: [],
     showSingleMovieSection: false,
+    averagesGraph: {},
   },
   getters: {
     RottenTomatoesProfessional: state => state.RottenTomatoesProfessional,
@@ -22,6 +23,7 @@ export default new Vuex.Store({
     fandangoStarsAverage: state => state.fandangoStarsAverage,
     singleMovie: state => state.singleMovie,
     showSingleMovieSection: state => state.showSingleMovieSection,
+    averagesGraph: state => state.averagesGraph,
   },
   actions: {
 
@@ -30,6 +32,11 @@ export default new Vuex.Store({
       dispatch('fetchRottenTomatoeRatings')
       dispatch('fetchMetaCriticRatings')
       dispatch('fetchFandangoRatings')
+    },
+
+    //This action will build the graphs.
+    buildGraphs: ({ dispatch }) => {
+      console.log('Fired!')
     },
 
     //Get Rotten Tomatoe ratings
