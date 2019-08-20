@@ -36,7 +36,7 @@ export default new Vuex.Store({
 
     //This action will build the graphs.
     buildGraphs: ({ dispatch }) => {
-      console.log('Fired!')
+      dispatch('buildFirstGraph')
     },
 
     //Get Rotten Tomatoe ratings
@@ -82,7 +82,17 @@ export default new Vuex.Store({
         commit('setSingleMovieRatings', res.data)
         commit('setShowSingleMovieSection', show)
       })
-    }
+    },
+
+    //This action will build the first graph
+    buildFirstGraph: ({commit}) => {
+      const path = 'http://localhost:5000/firstGraph';
+      axios.get(path)
+      .then((res) => {
+        console.log(res.data)
+        commit('setFirstGraph', res.data)
+      })
+    },
 
   },
 
@@ -107,6 +117,9 @@ export default new Vuex.Store({
     },
     setShowSingleMovieSection(state, data){
       state.showSingleMovieSection = data;
-    }
+    },
+    setFirstGraph(state, data){
+      state.averagesGraph = data;
+    },
   },
 });

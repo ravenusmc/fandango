@@ -1,6 +1,5 @@
 <template>
   <div>
-    Hi
     <v-card>
       <GChart
         :type="typeOne"

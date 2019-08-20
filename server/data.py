@@ -66,6 +66,7 @@ class Data():
     def get_average_movie_ratings(self):
         movie_rating_data = []
         columns = ['Company', 'Rating']
+        movie_rating_data.append(columns)
         companies = ['Rotten Tomatoes', 'Metacritic', 'Fandango']
         csv_file_names = ['RT_norm', 'Metacritic_norm', 'Fandango_Stars']
         count = 0
@@ -73,13 +74,14 @@ class Data():
             rows = []
             ratings_average = format(self.data[csv_file_names[count]].mean(), '.2f')
             rows.append(companies[count])
-            rows.append(ratings_average)
+            rows.append(float(ratings_average))
             movie_rating_data.append(rows)
+            count += 1
         return movie_rating_data
 
 
 
 
-data = Data()
-data.get_average_movie_ratings()
+# data = Data()
+# data.get_average_movie_ratings()
 #data.get_single_movie_ratings('Cinderella (2015)')

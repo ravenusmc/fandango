@@ -1,7 +1,13 @@
 <template>
   <div>
     <section>
-      <GraphCard/>
+
+      <GraphCard
+        :typeOne='typeOne'
+        :data='averagesGraph'
+        :options='chartOptionsOne'>
+      </GraphCard>
+
     </section>
   </div>
 </template>
@@ -14,8 +20,16 @@ import { mapGetters } from 'vuex';
 export default {
   name: "GraphArea",
   data(){
-    return {
-      typeOne: "BarChart",
+      return {
+        typeOne: "BarChart",
+        chartOptionsOne: {
+        title: 'Average Movie Ratings (Professional)',
+        legend: { position: 'bottom' },
+        'height': 300,
+        vAxis: { viewWindow: {
+          min: 0
+        }}
+      },
     }
   },
   components: {
