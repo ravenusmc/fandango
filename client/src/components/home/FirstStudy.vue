@@ -8,13 +8,13 @@
 
       <div>
         <div>
-          <h3 class='center'>Basic review of the Data</h3>
+          <h3 class='center font'>Basic review of the Data</h3>
           <div>
-            <p>Rotten Tomatoes Average Rating (Professional): {{ RottenTomatoesProfessional }} out of 100.</p>
-            <p>Rotten Tomatoes Average Rating (User): {{ RottenTomatoesUser}} out of 100.</p>
-            <p>Metacritic Average Rating (Professional): {{ metaCriticProfessional }} out of 100.</p>
-            <p>Metacritic Average Rating (User): {{ metaCriticUser }} out of 10.</p>
-            <p>Fandango Stars Average: {{ fandangoStarsAverage }} out of 5.</p>
+            <p class='font'>Rotten Tomatoes Average Rating (Professional): {{ RottenTomatoesProfessional }} out of 100.</p>
+            <p class='font'>Rotten Tomatoes Average Rating (User): {{ RottenTomatoesUser}} out of 100.</p>
+            <p class='font'>Metacritic Average Rating (Professional): {{ metaCriticProfessional }} out of 100.</p>
+            <p class='font'>Metacritic Average Rating (User): {{ metaCriticUser }} out of 10.</p>
+            <p class='font'>Fandango Stars Average: {{ fandangoStarsAverage }} out of 5.</p>
           </div>
         </div>
 
@@ -66,6 +66,10 @@ export default {
 </script>
 
 <style scoped>
+
+.font {
+  font-family: 'Roboto Mono', monospace;
+}
 
 .center {
   text-align: center;

@@ -4,8 +4,8 @@
     <section>
 
       <div>
-        <h1 class='title'>Background</h1>
-        <p>
+        <h1 class='title font'>Background</h1>
+        <p class='font'>
           I'll be honest. This project is really just a filler project that I'll
           be working on until I come up with another project which may be a PHP
           site. As I was finishing up my Vietnam project, I wanted to build a project
@@ -15,7 +15,7 @@
           see what I could build.
         </p>
 
-        <p>
+        <p class='font'>
           This project will essentially be looking at Fandango movie ratings and
           comparing them to other movie ratings sites. From the FiveThirtyEight
           readme on the is data, they were looking at if Fandango rates movies
@@ -23,7 +23,7 @@
           sells movie tickets this could be going on.
         </p>
 
-        <p>I'll be doing some basic data analysis on the data as well as building
+        <p class='font'>I'll be doing some basic data analysis on the data as well as building
           a few graphs so that we can see the data visually. As for telling if
           Fandango does give higher rates - I'm not sure if I have the statistical
           background for that but we'll see! Finally, the layout of this project
@@ -49,6 +49,10 @@ export default {
 </script>
 
 <style scoped>
+
+.font {
+  font-family: 'Roboto Mono', monospace;
+}
 
 section {
   margin-top: 50px;

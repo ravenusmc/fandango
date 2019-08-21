@@ -9,11 +9,11 @@
       <!-- Basic data information -->
       <FirstStudy/>
       <hr>
-      <!-- Start of Graph area -->
+      <!-- Graph area -->
       <GraphArea/>
       <hr>
-      <!-- Start of Summary Area -->
-
+      <!-- Summary Area -->
+      <Summary/>
 
     </main>
 
@@ -25,6 +25,7 @@ import Header from '@/components/home/Header.vue';
 import Purpose from '@/components/home/Purpose.vue';
 import FirstStudy from '@/components/home/FirstStudy.vue';
 import GraphArea from '@/components/home/GraphArea.vue';
+import Summary from '@/components/home/Summary.vue';
 
 export default {
   name: 'home',
@@ -33,6 +34,7 @@ export default {
     Purpose,
     FirstStudy,
     GraphArea,
+    Summary,
   },
 };
 </script>

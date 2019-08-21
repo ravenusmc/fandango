@@ -2,7 +2,7 @@
   <div>
 
     <form @submit="submitSelection">
-      <h5>Select a Movie:</h5>
+      <h5 class='font'>Select a Movie:</h5>
         <input type="text" v-model="search" placeholder="Movie Name">
         </br>
         <select v-model="movie" name="movie">
@@ -111,6 +111,10 @@ export default {
 </script>
 
 <style scoped>
+
+.font {
+  font-family: 'Roboto Mono', monospace;
+}
 
 form {
   display: flex;
