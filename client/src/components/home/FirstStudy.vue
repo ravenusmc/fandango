@@ -23,7 +23,7 @@
         <div class='singleMovieResultsArea' v-if='showSingleMovieSection'>
           <p class='font_change'>Rotten Tomatoes Rating: {{ singleMovie[0] }}</p>
           <p class='font_change'>Metacritic Rating: {{ singleMovie[1] }}</p>
-          <p class='font_change'>Fandango_rating: {{ singleMovie[2] }}</p>
+          <p class='font_change'>Fandango Rating: {{ singleMovie[2] }}</p>
         </div>
 
       </div>

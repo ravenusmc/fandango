@@ -38,3 +38,9 @@ export default {
   },
 };
 </script>
+
+<style>
+main {
+  margin-bottom: 50px;
+}
+</style>
