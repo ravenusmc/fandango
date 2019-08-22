@@ -35,4 +35,4 @@ as well as npm.
 
 # Preview
 
-To see a video that talks about this project please go here: COMING SOON
+To see a video that talks about this project please go here: https://www.youtube.com/watch?v=n-ixMB8x7c4&t=3s
